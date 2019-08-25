@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<!-- 注解扫描包 -->
+	<context:component-scan base-package="com.login" />
+
+
+	<!-- 配置扫描器，将mybatis接口的实现加入spring中 -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<!-- 扫描所有dao接口的实现，加入到ioc容器中 -->
+		<property name="basePackage" value="com.login"></property>
+		<property name="sqlSessionFactoryBeanName"
+			value="sqlSessionFactory"></property>
+	</bean>
+
+	<!-- 设置对字符串的消息转换器 
+	<bean id="stringHttpMessageConverter"
+		class="org.springframework.http.converter.StringHttpMessageConverter">
+		<property name="supportedMediaTypes">
+			<list>
+				<value>text/plain;charset=UTF-8</value>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean> -->
+
+	<!-- 输出对象转JSON支持 
+	<bean id="jsonConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+		<property name = "supportedMediaTypes">
+			<list>
+				<value>application/json;charset=UTF-8</value>
+			</list>
+		</property>
+	</bean> -->
+
+
+</beans>

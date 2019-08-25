@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.login.dao.UserDao">
+
+<select resultType="com.login.entity.User" parameterType="String" id="findByUserName">
+select * from userinfo where userName =#{userName}</select>
+
+<!-- 数据库中id字段是自增的，故无需插入；state字段默认值为'offline'，即用户离线 -->
+<insert parameterType="com.login.entity.User" id="insertOneUser">
+insert into userinfo (`userName`, `password`, `country`,`province`,`urban`,`address`,`phoneNumber`,`email`,`state`) 
+values
+(#{userName},#{password},#{country},#{province},#{urban},#{address},#{phoneNumber},#{email},'offline')</insert>
+
+</mapper>

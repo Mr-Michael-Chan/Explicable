@@ -1,0 +1,62 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0;
+	background: #f6f6f6;
+}
+
+.app-header {
+	width: 100%;
+	background: #fff;
+}
+
+.app-header-inner {
+	width: 1000px;
+	height: 52px;
+	padding: 0 16px;
+	background: #8bc34a;
+	margin: 0 auto;
+}
+
+.sticky-holder {
+	display: none;
+}
+
+.app-content {
+	display: flex;
+	align-items: flex-start; /*--让app-main-column和side-bar在副轴上上对齐--*/
+	width: 1000px;
+	padding: 0 16px;
+	margin: 10px auto;
+	background: #00bcd4;
+}
+
+.story-container {
+	width: 694px;
+	height: 1000px;
+	padding-bottom: 20px;
+	background: #ff9800;
+}
+
+.app-main-column {
+	margin-right: 10px;
+}
+
+.side-bar {
+	flex: 1; /*--没有为side-bar设置宽度，而是通过设置flex属性，让side-bar自适应剩余宽度--*/
+	height: 500px;
+	background: #f44336;
+}
+
+.card { /*--卡片样式--*/
+	box-sizing: border-box;
+	overflow: hidden;
+	margin-bottom: 10px;
+	border-radius: 2px;
+	background: #fff;
+	box-shadow: 0 1px 3px rgba(26, 26, 26, .1);
+}
+
+.story-item {
+	padding: 16px 20px;
+}
